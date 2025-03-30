@@ -2,21 +2,20 @@ Simple tool that tries to mitigate problems caused by [JT-80023](https://youtrac
 It looks for blob files in youtrack DB, that are not linked from the database.
 All such files can be optionally truncated to 0 bytes, to save disk space.
 
-# How to build
+### How to build
 ```
 ./gradlew shadowJar
 ```
 
-# Usage
+### Usage
 ```
 java -classpath youtrack-db-cleaner-all.jar cz.seznam.youtrack.MainKt [<args>...] <path>
 ```
 
-## Arguments
-  `-h`, `--help`        Print this help.
-  `-v`, `--verbose`     List all the analyzed files and some more information.
-  `-d`, `--delete`      Truncate the blob files that should not be present.
-                        Without this option, files are only listed and no destructive action is taken.
+### Arguments
+  `-h`, `--help`        Print this help.\
+  `-v`, `--verbose`     List all the analyzed files and some more information.\
+  `-d`, `--delete`      Truncate the blob files that should not be present. Without this option, files are only listed and no destructive action is taken.\
   `<path>`              Path to the database, e.g. '/opt/youtrack/data/youtrack'.
 
 # IMPORTANT NOTES:
